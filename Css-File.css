@@ -1,0 +1,582 @@
+/* Mandatory Stuff */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+/* Hero Section Part */
+.Hero__section{
+    background: url(images/heroSectionBackground.png);
+    background-size: cover;  
+    background-position: center; /* specifies the postition of the image */
+    color: white;
+    min-height: 60vh;
+}
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 65px;
+    padding: 16px 48px ;
+    font-size: 110%;
+}
+.navbar a{
+    color: white;
+    text-decoration: none; /* specifies that this particular part doesnt have any decoration*/
+}
+.navbar__menu_container{
+    display: flex;
+    gap: 18px;
+}
+.navbar__menu_container .user_icon{
+    height: 25px;
+    width: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid white;
+    border-radius: 100%;
+    display: none;  /* indicates that this particular thing cannot be displayed */
+}
+
+.hero__section_container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    height: calc(60vh - 65px); /* It calculates the height and width from two different units and implements it */
+}
+.hero__section_logo{
+    width: 300px;
+    height: 60px;
+}
+.hero__section_title{
+    text-align: center;
+    font-size: 30px;
+    font-weight: 400; /* Indicates the size of the font whether [thin,medium,...etc] */
+}
+.hero__section_input_container{
+    background-color: white;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 50%;
+    border-radius: 10px;
+}
+.input_container_location {
+    padding: 5px;
+    border: none;
+    outline: none;
+    width: 35%;
+    border-right: 2px solid #e0e0e0; /* For the line in the mid */
+}
+.input_container_search{
+    padding: 5px;
+    border: none;
+    outline: none;
+    width:65%
+}
+.hero__section_input_container .location_icon{
+    height: 25px;
+    width: 25px;
+    border: 1px solid white;
+    border-radius: 100%;
+    color: red;
+}
+.hero__section_input_container .Search_icon{
+    height: 25px;
+    width: 25px;
+    border: 1px solid white;
+    border-radius: 100%;
+}
+
+@media only screen and (max-width:600px)  {
+    /* Navigation bar */
+    .navbar__menu_container .user_icon{
+        display: flex;
+    }
+    .link{
+        display: none;
+    }
+    .Hero__section{
+        min-width: 80vh;
+    }
+
+    /* Hero-section */
+    .hero__section_container{
+        flex-direction: column;
+        background: transparent;
+        width: 100%;
+        height: calc(80vh - 60px);
+    }
+    .hero__section_title{
+        font-size: 20px;
+        width: 95%;
+    }
+    .input_container_location,.input_container_search{
+        padding: 20px;
+        border-radius: 10px;
+        width: 90%;
+    }
+}
+
+/* This is about cards part */
+.container{
+    margin: 3rem auto;
+    width: 90%;
+}
+.we__offer{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+}
+.we__offer_card{
+    border-radius: 15px;
+    border: 1px solid #e0e0e0;
+    overflow: hidden; /* It fit the image inside the box */
+    transition: all 1s ease-in-out; /* When we provide tranistion effect to overflow the effect goes on for 1s */
+    cursor: pointer;
+    margin-right: 12px;
+}
+.we__offer_card:hover{
+    transform: scale(1.10);
+}
+.we__offer_card img{
+    width: 100%;
+    height: 170px;
+    object-fit: cover;
+    object-position: center;
+}
+.we__offer_content{
+    padding: 10px;
+}
+.we__offer_content h2{
+    font-size: 20px;
+    font-weight: 406.4;
+}
+.we__offer_content p{
+    font-size: 15px;
+    font-weight: 300;
+}
+
+/* This is about collection section */
+/* We have to still deal with gradiants and z-index */
+.collections h1{
+    font-weight: 500;
+}
+.collections .sub_heading_container{
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+.sub_heading_container span:nth-child(2){
+    color: #ff7e8b;
+    font-size: 12px;
+    cursor: pointer;
+}
+.collections_card_container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 50px;
+}
+.card{
+    transition: all 1s ease-in-out;
+}
+.card:hover{
+    transform: scale(1.05);
+}
+.collections_card_container .card{
+    height: 200px;
+    min-width: 250px;
+    background-size: cover;
+    background-position: center;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    position: relative;
+    cursor: pointer;
+}
+.card1{
+    background-image: url(images/collection1.jpg);
+}
+.card2{
+    background-image: url(images/collection2.jpg);
+}
+.card3{
+    background-image: url(images/collection3.jpg);
+}
+.card4{
+    background-image: url(images/collection4.jpg);
+}
+.overlay{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 1px solid #e0e0e0;
+    border-radius:10px ;
+    background: linear-gradient(
+        0deg,
+        rgba(238,174,202,1) 0%, /*rgba => red green blue opacity[ how much visibility we required and it ranges from 0-1] */ 
+        rgba(192,181,218,1) 57%,
+        rgba(148,187,233,1) 100%,
+    );
+    z-index: 1; /* x , y and z axis */
+ } 
+.collections_card_container .card .content{
+     position: absolute;
+     bottom: 0;
+     left: 0;
+     color: white;
+     padding: 10px 10px;
+     font-size: 1rem;
+}
+.content h4{
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+.content span{
+    font-weight: 250;
+}
+
+/* This is about app section */
+.get_the_app{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(255, 251, 247);
+    width: 100%;
+    padding: 3rem 6rem;
+}
+.get_the_app .semiContainer{
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+.get_the_app .semiContainer .left{
+    flex: 2;
+}
+.get_the_app .semiContainer .left img{
+    width: 350px;
+    object-fit: cover;
+    object-position: center;
+}
+.get_the_app .semiContainer .right{
+    flex: 3;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.right h1{
+    font-weight: 450;
+    font-size: 40px;
+}
+.right p{
+    font-weight: 350;
+    font-size: 15px;
+}
+.right .radio_button_container{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.right .radio_button_container div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.right .input_container{
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+.input_container input{
+    padding: 10px 12px;
+    flex: auto;
+    border: 2px solid grey;
+    outline: none;
+    border-radius: 5px;
+}
+.input_container button {
+    padding: 10px 12px;
+    border: none;
+    background-color: rgb(239,79,95);
+    border-radius: 5px;
+    font-weight: 500;
+    color: white;
+    cursor: pointer;
+} 
+.download_app_container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.download_app_container h5{
+   font-weight: 300;
+}
+.download_app_container img{
+    width: 40%;
+    border-radius: 5px;
+}
+.download_app_container img:nth-child(1){
+    transition: all 1s ease-in-out;
+    margin: 10px;
+}
+.download_app_container img:nth-child(1):hover{
+    transform: scale(1.05);
+}
+.download_app_container img:nth-child(2){
+    transition: all 1s ease-in-out;
+    margin: 10px;
+}
+.download_app_container img:nth-child(2):hover{
+    transform: scale(1.05);
+}
+
+@media only screen and (max-width: 1300px){
+    .get_the_app .semiContainer .left{
+        flex: 1;
+    }
+    .get_the_app .semiContainer .right{
+        flex: 1;
+    }
+    .get_the_app .semiContainer {
+        width: 80%;
+    }
+}
+@media only screen and (max-width: 900px){
+    .get_the_app {
+        padding: 2rem 0;
+    }
+    .get_the_app .semiContainer{
+        width: 95%;
+        flex-direction: column;
+    }
+}
+
+/* This is about Exploring part */
+.Explore{
+    width: 100%;
+}
+.Explore .Explore_section1{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+    margin: auto;
+    padding-top: 50px;
+}
+.Explore_section1 h1{
+    font-size: 28px;
+    font-weight: 500;
+    margin-left: 150px;
+    margin-bottom: 20px;
+}
+.Explore .navigation_Explore_container{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+.navigation_Explore_container .link_Explore_container{
+    width: 80%;
+    margin-left: 150px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    padding-top: 20px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding: 10px;
+}
+.navigation_Explore_container .link_Explore_container h3{
+    font-size: 20px;
+    font-weight: 500;
+}
+.link_section a{
+    color: gray;
+    font-size: 15px;
+    font-weight: 350;
+}
+.Explore_link{
+    text-decoration: none;
+    padding: 3px;
+}
+.Explore_link:hover{
+    color: black;
+}
+.Explore_links{
+    text-decoration: none;
+    padding: 4px;
+}
+.Explore_links:hover{
+    color: black;
+}
+.Explore_link_Container{
+    display: grid;
+    grid-template-columns: repeat(5 , 1fr); 
+    width: 80%;
+    gap: 3rem;
+}
+.Explore_links{
+    display: flex;
+    flex-direction: column;
+    gap: 30%;
+}
+
+@media only screen and (max-width: 900px) {
+    .Explore_link_Container{
+        grid-template-columns: repeat(3 , 1fr);
+    }
+}
+@media only screen and (max-width: 500px) {
+    .Explore_link_Container{
+        grid-template-columns: repeat(2 , 1fr);
+    }
+}
+@media only screen and (max-width: 300px) {
+    .Explore_link_Container{
+        grid-template-columns: repeat(1 , 1fr);
+    }
+}
+
+/* This is about Footer part */
+.footer{
+    width: 100%;
+    background-color: #f8f8f8;
+}
+.footer_section1{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+    margin: auto;
+    padding-top: 50px;
+}
+.footer_section1 img{
+    width: 150px;
+}
+.section1_buttonContainer{
+    display: flex;
+    gap: 1rem;
+}
+.section1_buttonContainer button{
+    padding: 5px;
+    width: 110px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    cursor: pointer;
+}
+.navigation_container{
+    display: grid;
+    /* grid-template-columns: 1fr 1fr 1fr 1fr 1fr; */
+    grid-template-columns: repeat(5 , 1fr); /* repeat( how many tyms we wanna repeat , how many fragments ) */
+    width: 80%;
+    margin: auto;
+    gap: 3rem;
+    padding: 3rem 0;
+}
+.link_container{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.link_container h5{
+    font-size: 18px;
+    font-weight: 450;
+    margin-bottom: 10px; 
+    letter-spacing: 0.5px;
+}
+.link_container .footer_link{
+    color: gray;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 300;
+}
+.footer_link:hover{
+    color: black;
+}
+.link_container .section_links_container{
+    display: flex;
+    gap: 8px;
+}
+.link_container .section_links_container button{
+    background-color: black;
+    border: none;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.link_container .section_links_container button i{
+    color: white;
+    font-size: 15px;
+    display: flex;
+    align-items: center; /* it is for x-axis */
+    justify-content: center; /* it is for y-axis */
+}
+.link_container .footer_section_logo{
+    width: 100%;
+    cursor: pointer;
+}
+/* This is one way of writing */
+/* .footer hr{
+    width: 80%;
+    margin-left: 150px;
+    margin-bottom: 20px;
+} 
+.footer .disclamer{
+    width: 80%;
+    color: gray;
+    font-size: 14px;
+    margin-left: 150px;
+    font-weight: 260;
+    padding-bottom: 10px;
+} */
+/* This is another way  */
+.footer .disclamer{
+    width: 80%;
+    color: gray;
+    margin: auto;
+    border-top: 1px solid gray;
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+@media only screen and (max-width: 900px) {
+    .navigation_container{
+        grid-template-columns: repeat(3 , 1fr);
+    }
+}
+@media only screen and (max-width: 500px) {
+    .navigation_container{
+        grid-template-columns: repeat(2 , 1fr);
+    }
+}
+@media only screen and (max-width: 300px) {
+    .navigation_container{
+        grid-template-columns: repeat(1 , 1fr);
+    }
+}
