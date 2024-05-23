@@ -228,13 +228,14 @@
     left: 0;
     border: 1px solid #e0e0e0;
     border-radius:10px ;
+    /* background: rgb(238,174,202); */
     background: linear-gradient(
         0deg,
         rgba(238,174,202,1) 0%, /*rgba => red green blue opacity[ how much visibility we required and it ranges from 0-1] */ 
         rgba(192,181,218,1) 57%,
         rgba(148,187,233,1) 100%,
     );
-    z-index: 1; /* x , y and z axis */
+    z-index: 5; /* x , y and z axis */
  } 
 .collections_card_container .card .content{
      position: absolute;
