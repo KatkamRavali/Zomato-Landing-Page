@@ -10,7 +10,7 @@
 .Hero__section{
     background: url(images/heroSectionBackground.png);
     background-size: cover;  
-    background-position: center; /* specifies the postition of the image */
+    background-position: cover; /* specifies the postition of the image */
     color: white;
     min-height: 60vh;
 }
@@ -20,7 +20,6 @@
     justify-content: space-between;
     height: 65px;
     padding: 16px 48px ;
-    font-size: 110%;
 }
 .navbar a{
     color: white;
@@ -36,8 +35,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid white;
     border-radius: 100%;
+    border: 1px solid white;
     display: none;  /* indicates that this particular thing cannot be displayed */
 }
 
@@ -50,13 +49,13 @@
     height: calc(60vh - 65px); /* It calculates the height and width from two different units and implements it */
 }
 .hero__section_logo{
-    width: 300px;
-    height: 60px;
+    width: 200px;
+    height: 40px;
 }
 .hero__section_title{
     text-align: center;
     font-size: 30px;
-    font-weight: 400; /* Indicates the size of the font whether [thin,medium,...etc] */
+    font-weight: 380; /* Indicates the size of the font whether [thin,medium,...etc] */
 }
 .hero__section_input_container{
     background-color: white;
@@ -95,7 +94,7 @@
     border-radius: 100%;
 }
 
-@media only screen and (max-width:600px)  {
+@media only screen and (max-width:1000px)  {
     /* Navigation bar */
     .navbar__menu_container .user_icon{
         display: flex;
@@ -104,7 +103,7 @@
         display: none;
     }
     .Hero__section{
-        min-width: 80vh;
+        min-height: 80vh;
     }
 
     /* Hero-section */
@@ -112,16 +111,16 @@
         flex-direction: column;
         background: transparent;
         width: 100%;
-        height: calc(80vh - 60px);
+        height: calc(80vh - 40px);
     }
     .hero__section_title{
-        font-size: 20px;
+        font-size: 18px;
         width: 95%;
     }
     .input_container_location,.input_container_search{
-        padding: 20px;
+        padding: 18px;
         border-radius: 10px;
-        width: 90%;
+        width: 98%;
     }
 }
 
